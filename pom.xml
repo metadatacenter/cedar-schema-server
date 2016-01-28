@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>org.metadatacenter</groupId>
   <artifactId>cedar-schema-server</artifactId>
+  <version>0.1.0</version>
+  <packaging>pom</packaging>
+
   <name>CEDAR Schema Server</name>
   <description>CEDAR server to manage Schemas for Template Fields, Template Elements, Metadata Templates and Template
     Instances
   </description>
-  <version>0.1.0</version>
-  <packaging>pom</packaging>
 
   <modules>
     <module>cedar-schema-server-core</module>
@@ -18,7 +19,6 @@
   </modules>
 
   <properties>
-
     <java.version>1.8</java.version>
     <scala.version>2.11.5</scala.version>
     <scala.dependencies.version>2.11</scala.dependencies.version>
@@ -40,11 +40,9 @@
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
   </properties>
 
   <dependencies>
-
     <dependency>
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-library</artifactId>
@@ -62,7 +60,6 @@
       <artifactId>logback-classic</artifactId>
       <version>${logback.version}</version>
     </dependency>
-
   </dependencies>
 
 </project>
