@@ -12,10 +12,9 @@ Clone the project:
 
 At the project root folder:
 
-    mvn install
+    mvn cean nstall
     cd cedar-schema-server-play
     mvn play2:run
 
-By default, the services will be running at
-http://localhost:9002
+By default, the services will be running at [http://localhost:9002]
 
