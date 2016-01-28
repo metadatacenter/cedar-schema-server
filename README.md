@@ -16,5 +16,5 @@ At the project root folder:
     cd cedar-schema-server-play
     mvn play2:run
 
-By default, the services will be running at [http://localhost:9002]
+By default, the services will be running at [http://localhost:9002](http://localhost:9002)
 
