@@ -1,6 +1,6 @@
 # cedar-schema-server
 
-CEDAR server to manage schemas
+CEDAR server to retrieve schemas
 
 ## Getting started
 
@@ -12,7 +12,7 @@ Clone the project:
 
 At the project root folder:
 
-    mvn cean nstall
+    mvn clean install
     cd cedar-schema-server-play
     mvn play2:run
 
