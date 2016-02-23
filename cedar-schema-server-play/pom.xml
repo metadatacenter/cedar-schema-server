@@ -57,6 +57,12 @@
     </dependency>
 
     <dependency>
+      <groupId>org.metadatacenter</groupId>
+      <artifactId>cedar-server-utils-play</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+
+    <dependency>
       <groupId>com.typesafe.play</groupId>
       <artifactId>play_${play2.scala.version}</artifactId>
       <version>${play2.version}</version>
