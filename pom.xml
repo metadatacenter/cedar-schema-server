@@ -19,6 +19,11 @@
     Instances
   </description>
 
+  <properties>
+    <!-- Do Not Remove This! We need it in Pom.scala -->
+    <scala.version>2.11.5</scala.version>
+  </properties>
+
   <modules>
     <module>cedar-schema-server-core</module>
     <module>cedar-schema-server-play</module>
