@@ -6,10 +6,14 @@ tmp
 .history
 dist
 /.idea
-/*.iml
+*.iml
 /out
 /.idea_modules
 /.classpath
 /.project
-/RUNNING_PID
+*/RUNNING_PID
 /.settings
+
+pom.xml.releaseBackup
+release.properties
+pom.xml.versionsBackup
