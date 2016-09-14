@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.metadatacenter</groupId>
     <artifactId>cedar-parent</artifactId>
-    <version>0.7.1</version>
+    <version>0.7.2</version>
   </parent>
 
   <groupId>org.metadatacenter</groupId>
   <artifactId>cedar-schema-server</artifactId>
-  <version>0.7.1</version>
+  <version>0.7.2</version>
   <packaging>pom</packaging>
 
   <name>CEDAR Schema Server</name>
@@ -27,7 +27,7 @@
     <connection>scm:git:git@github.com:metadatacenter/cedar-schema-server.git</connection>
     <developerConnection>scm:git:git@github.com:metadatacenter/cedar-schema-server.git</developerConnection>
     <url>https://github.com/metadatacenter/cedar-schema-server</url>
-    <tag>release-0.7.1</tag>
+    <tag>release-0.7.2</tag>
   </scm>
 
   <modules>
