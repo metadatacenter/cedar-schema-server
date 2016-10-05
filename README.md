@@ -1,5 +1,7 @@
 # cedar-schema-server
 
+[![Build Status](https://travis-ci.org/metadatacenter/cedar-schema-server.svg?branch=master)](https://travis-ci.org/metadatacenter/cedar-schema-server)
+
 CEDAR server to retrieve schemas
 
 To access the documentation, [click here](https://github.com/metadatacenter/cedar-docs/wiki).
