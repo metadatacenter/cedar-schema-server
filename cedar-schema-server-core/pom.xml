@@ -11,7 +11,8 @@
 
   <groupId>org.metadatacenter</groupId>
   <artifactId>cedar-schema-server-core</artifactId>
-  <name>CEDAR Schema Server Core</name>
   <packaging>jar</packaging>
+
+  <name>CEDAR Schema Server Core</name>
 
 </project>

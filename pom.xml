@@ -18,11 +18,6 @@
     Instances
   </description>
 
-  <properties>
-    <!-- Do Not Remove This! We need it in Pom.scala -->
-    <scala.version>2.11.5</scala.version>
-  </properties>
-
   <scm>
     <connection>scm:git:git@github.com:metadatacenter/cedar-schema-server.git</connection>
     <developerConnection>scm:git:git@github.com:metadatacenter/cedar-schema-server.git</developerConnection>
@@ -32,7 +27,7 @@
 
   <modules>
     <module>cedar-schema-server-core</module>
-    <module>cedar-schema-server-play</module>
+    <module>cedar-schema-server-application</module>
   </modules>
 
 </project>
