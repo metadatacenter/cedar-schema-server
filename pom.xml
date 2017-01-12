@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -18,11 +19,6 @@
     Instances
   </description>
 
-  <properties>
-    <!-- Do Not Remove This! We need it in Pom.scala -->
-    <scala.version>2.11.5</scala.version>
-  </properties>
-
   <scm>
     <connection>scm:git:git@github.com:metadatacenter/cedar-schema-server.git</connection>
     <developerConnection>scm:git:git@github.com:metadatacenter/cedar-schema-server.git</developerConnection>
@@ -32,7 +28,7 @@
 
   <modules>
     <module>cedar-schema-server-core</module>
-    <module>cedar-schema-server-play</module>
+    <module>cedar-schema-server-application</module>
   </modules>
 
 </project>
