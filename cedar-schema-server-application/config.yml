@@ -1,0 +1,11 @@
+server:
+  applicationConnectors:
+  - type: http
+    port: 9003
+  adminConnectors:
+  - type: http
+    port: 9103
+logging:
+  level: INFO
+  loggers:
+    org.metadatacenter: DEBUG
