@@ -1,6 +1,5 @@
 package org.metadatacenter.cedar.schema;
 
-import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.metadatacenter.cedar.schema.health.SchemaServerHealthCheck;
 import org.metadatacenter.cedar.schema.resources.IndexResource;
@@ -19,7 +18,7 @@ public class SchemaServerApplication extends CedarMicroserviceApplication<Schema
   }
 
   @Override
-  public void initializeApp(Bootstrap<SchemaServerConfiguration> bootstrap) {
+  public void initializeApp() {
   }
 
   @Override
