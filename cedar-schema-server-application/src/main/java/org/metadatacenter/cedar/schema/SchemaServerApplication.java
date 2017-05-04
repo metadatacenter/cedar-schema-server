@@ -1,10 +1,10 @@
 package org.metadatacenter.cedar.schema;
 
-import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.metadatacenter.cedar.schema.health.SchemaServerHealthCheck;
 import org.metadatacenter.cedar.schema.resources.IndexResource;
 import org.metadatacenter.cedar.util.dw.CedarMicroserviceApplication;
+import org.metadatacenter.model.ServerName;
 
 public class SchemaServerApplication extends CedarMicroserviceApplication<SchemaServerConfiguration> {
 
@@ -13,12 +13,12 @@ public class SchemaServerApplication extends CedarMicroserviceApplication<Schema
   }
 
   @Override
-  public String getName() {
-    return "cedar-schema-server";
+  protected ServerName getServerName() {
+    return ServerName.SCHEMA;
   }
 
   @Override
-  public void initializeApp(Bootstrap<SchemaServerConfiguration> bootstrap) {
+  public void initializeApp() {
   }
 
   @Override
