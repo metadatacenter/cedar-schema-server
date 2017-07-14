@@ -19,7 +19,7 @@ public class SchemaServerApplication extends CedarMicroserviceApplication<Schema
   }
 
   @Override
-  protected void initializeWithBootsrap(Bootstrap<SchemaServerConfiguration> bootstrap) {
+  protected void initializeWithBootstrap(Bootstrap<SchemaServerConfiguration> bootstrap) {
   }
 
   @Override
