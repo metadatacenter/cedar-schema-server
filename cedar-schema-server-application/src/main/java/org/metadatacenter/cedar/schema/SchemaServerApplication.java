@@ -5,6 +5,7 @@ import io.dropwizard.setup.Environment;
 import org.metadatacenter.cedar.schema.health.SchemaServerHealthCheck;
 import org.metadatacenter.cedar.schema.resources.IndexResource;
 import org.metadatacenter.cedar.util.dw.CedarMicroserviceApplication;
+import org.metadatacenter.config.CedarConfig;
 import org.metadatacenter.model.ServerName;
 
 public class SchemaServerApplication extends CedarMicroserviceApplication<SchemaServerConfiguration> {
@@ -19,7 +20,7 @@ public class SchemaServerApplication extends CedarMicroserviceApplication<Schema
   }
 
   @Override
-  protected void initializeWithBootstrap(Bootstrap<SchemaServerConfiguration> bootstrap) {
+  protected void initializeWithBootstrap(Bootstrap<SchemaServerConfiguration> bootstrap, CedarConfig cedarConfig) {
   }
 
   @Override
