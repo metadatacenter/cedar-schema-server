@@ -1,9 +1,9 @@
 package org.metadatacenter.cedar.schema;
 
-import io.dropwizard.setup.Bootstrap;
-import io.dropwizard.setup.Environment;
-import org.metadatacenter.cedar.schema.health.SchemaServerHealthCheck;
+import io.dropwizard.core.setup.Bootstrap;
+import io.dropwizard.core.setup.Environment;
 import org.metadatacenter.cedar.schema.resources.IndexResource;
+import org.metadatacenter.cedar.util.dw.CedarDefaultHealthCheck;
 import org.metadatacenter.cedar.util.dw.CedarMicroserviceApplication;
 import org.metadatacenter.config.CedarConfig;
 import org.metadatacenter.model.ServerName;
@@ -29,10 +29,10 @@ public class SchemaServerApplication extends CedarMicroserviceApplication<Schema
 
   @Override
   public void runApp(SchemaServerConfiguration configuration, Environment environment) {
-    final IndexResource index = new IndexResource();
+    final IndexResource index = new IndexResource(cedarConfig);
     environment.jersey().register(index);
 
-    final SchemaServerHealthCheck healthCheck = new SchemaServerHealthCheck();
+    final CedarDefaultHealthCheck healthCheck = new CedarDefaultHealthCheck();
     environment.healthChecks().register("message", healthCheck);
   }
 }
