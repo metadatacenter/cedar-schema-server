@@ -62,4 +62,16 @@ public class SchemaServerApplicationSmokeTest {
     Assertions.assertTrue(response.body().contains("name"));
   }
 
+  /**
+   * The failure half of the contract. This server's whole surface is its index — it declares no
+   * authenticated endpoint, so there is no 401 to assert — which leaves an unrouted path as the one
+   * meaningful way for it to say no. Pinning it catches a catch-all route or an error mapper that
+   * starts answering something other than 404.
+   */
+  @Test
+  public void anUnknownPathIsNotFound() throws Exception {
+    HttpResponse<String> response = get("/no-such-route");
+    Assertions.assertEquals(404, response.statusCode());
+  }
+
 }
