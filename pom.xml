@@ -26,7 +26,6 @@
   </scm>
 
   <modules>
-    <module>cedar-schema-server-core</module>
     <module>cedar-schema-server-application</module>
   </modules>
 
