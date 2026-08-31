@@ -6,7 +6,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.metadatacenter.cedar.schema.resources.IndexResource;
+import org.metadatacenter.cedar.util.dw.CedarMicroserviceIndexResource;
 import org.metadatacenter.config.environment.CedarEnvironmentSource;
 import org.metadatacenter.util.test.RouteSurface;
 
@@ -55,7 +55,7 @@ public class SchemaRoutesRespondTest {
   public void everyDeclaredRouteAnswers() {
     RouteSurface.assertEveryRouteAnswers(
         "http://localhost:" + SERVER.getLocalPort(),
-        RouteSurface.endpoints(IndexResource.class),
+        RouteSurface.endpoints(CedarMicroserviceIndexResource.class),
         200);
   }
 
@@ -66,7 +66,7 @@ public class SchemaRoutesRespondTest {
    */
   @Test
   public void theRouteSurfaceIsOnlyTheIndex() {
-    List<String> routes = RouteSurface.endpoints(IndexResource.class).stream()
+    List<String> routes = RouteSurface.endpoints(CedarMicroserviceIndexResource.class).stream()
         .map(RouteSurface.Endpoint::key)
         .toList();
 
