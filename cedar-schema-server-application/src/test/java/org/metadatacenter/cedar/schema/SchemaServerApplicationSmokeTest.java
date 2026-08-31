@@ -63,6 +63,23 @@ public class SchemaServerApplicationSmokeTest {
   }
 
   /**
+   * The schema server ships no API spec, so it neither advertises documentation nor serves any.
+   *
+   * <p>Shared library code used to register the spec asset bundle and advertise swagger.json and the
+   * Swagger UI from the root of every service, whether or not it had a document, so a caller followed
+   * either link to a 404. This holds the quiet side of the gate that ended it. It came to rest here
+   * because this server declares no resource classes at all: it has nothing to document, so it will
+   * not move to the other side the way repo and group did.
+   */
+  @Test
+  public void noApiDocumentationIsAdvertisedOrServed() throws Exception {
+    Assertions.assertFalse(get("/").body().contains("apiDocs"),
+        "A service with no spec should advertise no documentation links");
+    Assertions.assertEquals(404, get("/swagger-api/swagger.json").statusCode(),
+        "A service with no spec should serve nothing at the spec path");
+  }
+
+  /**
    * The failure half of the contract. This server's whole surface is its index — it declares no
    * authenticated endpoint, so there is no 401 to assert — which leaves an unrouted path as the one
    * meaningful way for it to say no. Pinning it catches a catch-all route or an error mapper that
