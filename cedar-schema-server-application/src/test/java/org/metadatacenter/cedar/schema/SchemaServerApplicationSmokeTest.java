@@ -24,11 +24,11 @@ public class SchemaServerApplicationSmokeTest {
 
   static {
     // Must run before the test support boots the server, which reads the port env vars.
-    // Alternate server ports, so the test instance never collides with a running dev server.
+    // OS-assigned server ports, so the test instance never collides with a running dev server.
     Map<String, String> environment = new HashMap<>(CedarEnvironmentSource.getAll());
-    environment.put("CEDAR_SCHEMA_HTTP_PORT", "19003");
-    environment.put("CEDAR_SCHEMA_ADMIN_PORT", "19103");
-    environment.put("CEDAR_SCHEMA_STOP_PORT", "19203");
+    environment.put("CEDAR_SCHEMA_HTTP_PORT", "0");
+    environment.put("CEDAR_SCHEMA_ADMIN_PORT", "0");
+    environment.put("CEDAR_SCHEMA_STOP_PORT", "0");
     CedarEnvironmentSource.setOverride(environment);
   }
 
@@ -60,6 +60,23 @@ public class SchemaServerApplicationSmokeTest {
     HttpResponse<String> response = get("/");
     Assertions.assertEquals(200, response.statusCode());
     Assertions.assertTrue(response.body().contains("name"));
+  }
+
+  /**
+   * The schema server ships no API spec, so it neither advertises documentation nor serves any.
+   *
+   * <p>Shared library code used to register the spec asset bundle and advertise swagger.json and the
+   * Swagger UI from the root of every service, whether or not it had a document, so a caller followed
+   * either link to a 404. This holds the quiet side of the gate that ended it. It came to rest here
+   * because this server declares no resource classes at all: it has nothing to document, so it will
+   * not move to the other side the way repo and group did.
+   */
+  @Test
+  public void noApiDocumentationIsAdvertisedOrServed() throws Exception {
+    Assertions.assertFalse(get("/").body().contains("apiDocs"),
+        "A service with no spec should advertise no documentation links");
+    Assertions.assertEquals(404, get("/swagger-api/swagger.json").statusCode(),
+        "A service with no spec should serve nothing at the spec path");
   }
 
   /**

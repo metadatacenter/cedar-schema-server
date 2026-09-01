@@ -6,7 +6,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.metadatacenter.cedar.schema.resources.IndexResource;
+import org.metadatacenter.cedar.util.dw.CedarMicroserviceIndexResource;
 import org.metadatacenter.config.environment.CedarEnvironmentSource;
 import org.metadatacenter.util.test.RouteSurface;
 
@@ -30,11 +30,11 @@ public class SchemaRoutesRespondTest {
 
   static {
     // Must run before the test support boots the server, which reads the port env vars. Ports are
-    // distinct from the dev server and from every other booting test class.
+    // assigned by the OS, so they cannot collide with the dev server or another test.
     Map<String, String> environment = new HashMap<>(CedarEnvironmentSource.getAll());
-    environment.put("CEDAR_SCHEMA_HTTP_PORT", "19004");
-    environment.put("CEDAR_SCHEMA_ADMIN_PORT", "19104");
-    environment.put("CEDAR_SCHEMA_STOP_PORT", "19204");
+    environment.put("CEDAR_SCHEMA_HTTP_PORT", "0");
+    environment.put("CEDAR_SCHEMA_ADMIN_PORT", "0");
+    environment.put("CEDAR_SCHEMA_STOP_PORT", "0");
     CedarEnvironmentSource.setOverride(environment);
   }
 
@@ -55,7 +55,7 @@ public class SchemaRoutesRespondTest {
   public void everyDeclaredRouteAnswers() {
     RouteSurface.assertEveryRouteAnswers(
         "http://localhost:" + SERVER.getLocalPort(),
-        RouteSurface.endpoints(IndexResource.class),
+        RouteSurface.endpoints(CedarMicroserviceIndexResource.class),
         200);
   }
 
@@ -66,7 +66,7 @@ public class SchemaRoutesRespondTest {
    */
   @Test
   public void theRouteSurfaceIsOnlyTheIndex() {
-    List<String> routes = RouteSurface.endpoints(IndexResource.class).stream()
+    List<String> routes = RouteSurface.endpoints(CedarMicroserviceIndexResource.class).stream()
         .map(RouteSurface.Endpoint::key)
         .toList();
 

@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.metadatacenter</groupId>
     <artifactId>cedar-parent</artifactId>
-    <version>2.9.3</version>
+    <version>2.9.4</version>
   </parent>
 
   <groupId>org.metadatacenter</groupId>
   <artifactId>cedar-schema-server</artifactId>
-  <version>2.9.3</version>
+  <version>2.9.4</version>
   <packaging>pom</packaging>
 
   <name>CEDAR Schema Server</name>
@@ -26,7 +26,6 @@
   </scm>
 
   <modules>
-    <module>cedar-schema-server-core</module>
     <module>cedar-schema-server-application</module>
   </modules>
 
