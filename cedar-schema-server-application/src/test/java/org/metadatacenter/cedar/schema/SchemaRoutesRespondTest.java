@@ -5,6 +5,7 @@ import io.dropwizard.testing.ResourceHelpers;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.metadatacenter.cedar.util.dw.CedarMicroserviceIndexResource;
 import org.metadatacenter.config.environment.CedarEnvironmentSource;
@@ -26,6 +27,7 @@ import java.util.Map;
  * probed automatically, and one added unauthenticated to a server that is supposed to have none
  * shows up as a surface change rather than passing unnoticed.
  */
+@Tag("integration")
 public class SchemaRoutesRespondTest {
 
   static {
